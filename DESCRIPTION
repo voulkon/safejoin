@@ -1,16 +1,17 @@
 Package: safejoin
-Title: What the Package Does (One Line, Title Case)
+Title: Perform "Safe" Table Joins in R
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Sam",
+           family = "Edwardes",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
-License: What license it uses
+           email = "edwardes.s@gmail.com")
+Description: The goal of safejoin is to gaurntee that when performing joins that extra rows are not added to your data. saejoin 
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Suggests: 
     testthat
 Imports: 
     dplyr
+RoxygenNote: 7.1.1
