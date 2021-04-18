@@ -21,16 +21,21 @@ function.
 
 ## Installation
 
-safejoin is currently under development. An update will be published
-here once the package is published on CRAN.
-
-<!--
-You can install the released version of safejoin from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of safejoin from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("safejoin")
 ```
--->
+
+*Note that as of 2021-04-18 safejoin has been submitted to CRAN. It has
+not yet been accepted.*
+
+Install from GitHub
+
+``` r
+devtools::install_github("SamEdwardes/safejoin")
+```
 
 ## Example
 
@@ -51,8 +56,8 @@ safe_left_join(x, y, by = "key")
 
 ``` r
 safe_left_join(x, y, by = "key", action="warning")
-#> Warning in safe_left_join(x, y, by = "key", action = "warning"): Input data x had 2 rows. After
-#> performing the join the data has 3 rows.
+#> Warning in safe_left_join(x, y, by = "key", action = "warning"): Input data x had 2
+#> rows. After performing the join the data has 3 rows.
 #>   key value_x value_y
 #> 1   a       1       1
 #> 2   a       1       1
