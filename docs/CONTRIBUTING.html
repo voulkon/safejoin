@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>License • safejoin</title>
+<title>Contributing • safejoin</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="License" />
+<meta property="og:title" content="Contributing" />
 
 
 
@@ -110,12 +110,32 @@
 <div class="row">
   <div class="contents col-md-9">
     <div class="page-header">
-      <h1>License</h1>
+      <h1>Contributing</h1>
     </div>
 
-<pre>YEAR: 2021
-COPYRIGHT HOLDER: Sam Edwardes
-</pre>
+<div id="contributing" class="section level1">
+
+<p><code>safejoin</code> is happy to accept contributions. Please review the details below for how to contribute.</p>
+<div id="checklist" class="section level2">
+<h2 class="hasAnchor">
+<a href="#checklist" class="anchor"></a>Checklist</h2>
+<p>Before submitting a PR please run the following:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span>
+<span class="fu"><a href="https://devtools.r-lib.org//reference/document.html">document</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">pkgdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgdown.r-lib.org/reference/build_site.html">build_site</a></span><span class="op">(</span>preview <span class="op">=</span> <span class="cn">FALSE</span>, run_dont_run <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu"><a href="https://devtools.r-lib.org//reference/check.html">check</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="building-docs" class="section level2">
+<h2 class="hasAnchor">
+<a href="#building-docs" class="anchor"></a>Building docs</h2>
+<p>After making any documentation changes please be sure to run the following:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span>
+<span class="fu"><a href="https://devtools.r-lib.org//reference/document.html">document</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">pkgdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgdown.r-lib.org/reference/build_site.html">build_site</a></span><span class="op">(</span>preview <span class="op">=</span> <span class="cn">FALSE</span>, run_dont_run <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+</div>
+</div>
 
   </div>
 
