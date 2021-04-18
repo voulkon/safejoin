@@ -24,5 +24,11 @@ check()
 First run the steps outlined above that are required before submitting a PR. Then run:
 
 ```r
+# Checks
+check_spelling()
+check_rhub()
+check_win_devel()
 
+# Relase into the wild
+release()
 ```
