@@ -2,7 +2,7 @@
 % Please edit documentation in R/safe_left_join.R
 \name{safe_left_join}
 \alias{safe_left_join}
-\title{Validate no extra rows are added to the left hand side}
+\title{Validate extra rows are added not added to the left hand side}
 \usage{
 safe_left_join(..., action = "error", relationship = "*:1")
 }
@@ -48,33 +48,37 @@ output?}
 Options include: 'error', 'warning', or 'message'. By default 'error'.}
 
 \item{relationship}{What is the expected relationship between `x` and `y`?
-At this time the only available option is '*:1', indciating a many to one
+At this time the only available option is '*:1', indicating a many to one
 relationship between `x` and `y`. In the future more options may be added.}
 }
 \value{
-#' An object of the same type as `x`. The order of the rows and columns of `x`
+An object of the same type as `x`. The order of the rows and columns of `x`
 is preserved as much as possible. The output has the following properties:
 }
 \description{
-HEYYY
-Perform a "safe" left join where it is gauranteed that no additional rows are
-added to the left hand side table.
+Perform a "safe" left join where it is guaranteed that no additional rows are
+added to the left hand side table. For more information on left joins see 
+(\code{\link[dplyr:left_join]{dplyr::left_join}}).
 }
 \examples{
 # The relationship between `x` and `y` is '*:1'. No extra rows will be added
 # to the left hand side.
-#' x <- data.frame(key = c("a", "a", "b"), value_x = c(1, 4, 2))
+x <- data.frame(key = c("a", "a", "b"), value_x = c(1, 4, 2))
 y <- data.frame(key = c("a", "b"), value_y = c(1, 1))
 safe_left_join(x, y)
 
+\dontrun{
 # The relationship between `x` and `y` is '1:*'. An error should be raised
 # because additional rows will be added to the left hand side.
 x <- data.frame(key = c("a", "b"), value_x = c(1, 2))
 y <- data.frame(key = c("a", "a"), value_y = c(1, 1))
 safe_left_join(x, y)
+}
 
 # Alternatively instead of raising an error a warning or message can be
-outputed.
-#' safe_left_join(x, y, action = "warning")
-#' safe_left_join(x, y, action = "message")
+# outputted.
+x <- data.frame(key = c("a", "b"), value_x = c(1, 2))
+y <- data.frame(key = c("a", "a"), value_y = c(1, 1))
+safe_left_join(x, y, action = "warning")
+safe_left_join(x, y, action = "message")
 }

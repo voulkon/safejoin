@@ -3,3 +3,4 @@
 ^README\.Rmd$
 ^safejoin\.Rproj$
 ^\.Rproj\.user$
+^LICENSE\.md$
