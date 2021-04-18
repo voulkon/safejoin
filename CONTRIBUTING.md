@@ -2,7 +2,7 @@
 
 `safejoin` is happy to accept contributions. Please review the details below for how to contribute.
 
-## Checklist
+## ChecklistÍ
 
 Before submitting a PR please run the following:
 
