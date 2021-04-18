@@ -1,15 +1,26 @@
 ## Test environments
+
+### Local
+
 * local R installation, R 4.0.0
-* ubuntu 16.04 (on travis-ci), R 4.0.0
-* win-builder (devel)
+
+### GitHub Actions
+
+https://github.com/SamEdwardes/safejoin/actions/workflows/R-CMD-check.yaml
+
+* windows-latest (release)
+* macOS-latest (release)
+* ubuntu-20.04 (release)
+* ubuntu-20.04 (devel)
 
 ## R CMD check results
 
-0 errors ✓ | 0 warnings ✓ | 1 note x
-
 ```r
-── R CMD check results ────────────────────────────────────────────────── safejoin 0.0.0.9000 ────
-Duration: 23.1s
+Duration: 13.1s
 
 0 errors ✓ | 0 warnings ✓ | 0 notes ✓
 ```
+
+## Downstream dependencies
+
+safejoin relies on dplyr and glue. Both packages are developed and maintained by the Tidyverse. No downstream checks were performed as the Tidyverse is known to be stable and reliable.

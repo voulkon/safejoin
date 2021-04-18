@@ -7,3 +7,4 @@ CONTRIBUTING.md
 ^LICENSE\.md$
 ^cran-comments\.md$
 ^\.github$
+^revdep$
