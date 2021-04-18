@@ -69,9 +69,18 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
+
+<hr>
+<div id="output-github_document" class="section level2">
+<h2 class="hasAnchor">
+<a href="#output-github_document" class="anchor"></a>output: github_document</h2>
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+</div>
 <div id="safejoin" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#safejoin" class="anchor"></a>safejoin</h1></div>
+<!-- badges: start -->
+
 <p>The goal of safejoin is to guarantee that when performing joins that extra rows are not added to your data. safejoin is a wrapper around the <a href="https://dplyr.tidyverse.org/reference/join.html"><code>dplyr::left_join</code></a> function.</p>
 <ul>
 <li><a href="https://safejoin-r.netlify.app/">Docs</a></li>
@@ -81,7 +90,7 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>safejoin is currently under development.</p>
+<p>safejoin is currently under development. An update will be published here once the package is published on CRAN.</p>
 <!--
 You can install the released version of safejoin from [CRAN](https://CRAN.R-project.org) with:
 
@@ -104,8 +113,8 @@ install.packages("safejoin")
 <p><strong>Warning</strong>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/safe_left_join.html">safe_left_join</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, by <span class="op">=</span> <span class="st">"key"</span>, action<span class="op">=</span><span class="st">"warning"</span><span class="op">)</span>
-<span class="co">#&gt; Warning in safe_left_join(x, y, by = "key", action = "warning"): Input data x</span>
-<span class="co">#&gt; had 2 rows. After performing the join the data has 3 rows.</span>
+<span class="co">#&gt; Warning in safe_left_join(x, y, by = "key", action = "warning"): Input data x had 2 rows. After</span>
+<span class="co">#&gt; performing the join the data has 3 rows.</span>
 <span class="co">#&gt;   key value_x value_y</span>
 <span class="co">#&gt; 1   a       1       1</span>
 <span class="co">#&gt; 2   a       1       1</span>
@@ -128,6 +137,7 @@ install.packages("safejoin")
 <span class="co">#&gt; 2   b       2       1</span></code></pre></div>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -160,7 +170,13 @@ install.packages("safejoin")
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/SamEdwardes/safejoin/actions"><img src="https://github.com/SamEdwardes/safejoin/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 

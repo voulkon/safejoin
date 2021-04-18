@@ -9,6 +9,7 @@ Before submitting a PR please run the following:
 ```r
 library(devtools)
 document()
+knitr::knit("README.Rmd")
 pkgdown::build_site(preview = FALSE, run_dont_run = TRUE)
 check()
 ```

@@ -1,26 +1,26 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+
 
 # safejoin
 
 <!-- badges: start -->
-
-[![R build
-status](https://github.com/SamEdwardes/safejoin/workflows/R-CMD-check/badge.svg)](https://github.com/SamEdwardes/safejoin/actions)
+[![R build status](https://github.com/SamEdwardes/safejoin/workflows/R-CMD-check/badge.svg)](https://github.com/SamEdwardes/safejoin/actions)
 <!-- badges: end -->
 
-The goal of safejoin is to guarantee that when performing joins that
-extra rows are not added to your data. safejoin is a wrapper around the
-[`dplyr::left_join`](https://dplyr.tidyverse.org/reference/join.html)
-function.
+The goal of safejoin is to guarantee that when performing joins that extra rows are not added to your data. safejoin is a wrapper around the [`dplyr::left_join`](https://dplyr.tidyverse.org/reference/join.html) function.
 
--   [Docs](https://safejoin-r.netlify.app/)
--   [GitHub](https://github.com/SamEdwardes/safejoin/)
--   CRAN (not yet published)
+- [Docs](https://safejoin-r.netlify.app/)
+- [GitHub](https://github.com/SamEdwardes/safejoin/)
+- CRAN (not yet published)
 
 ## Installation
 
-safejoin is currently under development.
+safejoin is currently under development. An update will be published here once the package is published on CRAN.
 
 <!--
 You can install the released version of safejoin from [CRAN](https://CRAN.R-project.org) with:
@@ -32,12 +32,12 @@ install.packages("safejoin")
 
 ## Example
 
-Depending on your need safejoin can raise an error, a warning, or a
-message. By default safejoin will raise an error.
+Depending on your need safejoin can raise an error, a warning, or a message. By default safejoin will raise an error.
 
 **Error**:
 
-``` r
+
+```r
 library(safejoin)
 x <- data.frame(key = c("a", "b"), value_x = c(1, 2))
 y <- data.frame(key = c("a", "a"), value_y = c(1, 1))
@@ -47,10 +47,11 @@ safe_left_join(x, y, by = "key")
 
 **Warning**:
 
-``` r
+
+```r
 safe_left_join(x, y, by = "key", action="warning")
-#> Warning in safe_left_join(x, y, by = "key", action = "warning"): Input data x
-#> had 2 rows. After performing the join the data has 3 rows.
+#> Warning in safe_left_join(x, y, by = "key", action = "warning"): Input data x had 2 rows. After
+#> performing the join the data has 3 rows.
 #>   key value_x value_y
 #> 1   a       1       1
 #> 2   a       1       1
@@ -59,7 +60,8 @@ safe_left_join(x, y, by = "key", action="warning")
 
 **Message**:
 
-``` r
+
+```r
 safe_left_join(x, y, by = "key", action="message")
 #> Input data x had 2 rows. After performing the join the data has 3 rows.
 #>   key value_x value_y
@@ -68,11 +70,10 @@ safe_left_join(x, y, by = "key", action="message")
 #> 3   b       2      NA
 ```
 
-When a join is “safe” `safe_left_join` will have the exact same behavior
-as
-[`dplyr::left_join`](https://dplyr.tidyverse.org/reference/join.html).
+When a join is "safe" `safe_left_join` will have the exact same behavior as [`dplyr::left_join`](https://dplyr.tidyverse.org/reference/join.html).
 
-``` r
+
+```r
 x <- data.frame(key = c("a", "b"), value_x = c(1, 2))
 y <- data.frame(key = c("a", "b"), value_y = c(1, 1))
 safe_left_join(x, y, by = "key")
@@ -80,3 +81,4 @@ safe_left_join(x, y, by = "key")
 #> 1   a       1       1
 #> 2   b       2       1
 ```
+

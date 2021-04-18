@@ -5,6 +5,11 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors ✓ | 0 warnings ✓ | 1 note x
 
-* This is a new release.
+```r
+── R CMD check results ────────────────────────────────────────────────── safejoin 0.0.0.9000 ────
+Duration: 23.1s
+
+0 errors ✓ | 0 warnings ✓ | 0 notes ✓
+```
