@@ -9,7 +9,7 @@ Authors@R:
 Description: The goal of safejoin is to guarantee that when performing joins that extra rows are not added to your data.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 Suggests: 
     testthat
 Imports: 

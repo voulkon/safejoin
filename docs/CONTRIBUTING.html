@@ -140,7 +140,12 @@
 <a href="#releasing-to-cran" class="anchor"></a>Releasing to CRAN</h2>
 <p>First run the steps outlined above that are required before submitting a PR. Then run:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"></code></pre></div>
+<code class="sourceCode R"><span class="co"># Checks</span>
+<span class="fu">check_spelling</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="https://devtools.r-lib.org//reference/check_rhub.html">check_rhub</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="co"># Relase into the wild</span>
+<span class="fu"><a href="https://devtools.r-lib.org//reference/release.html">release</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 
