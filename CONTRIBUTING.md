@@ -7,11 +7,12 @@
 Before submitting a PR please run the following:
 
 ```r
-library(devtools)
-document()
-rmarkdown::render("README.Rmd")
-pkgdown::build_site(preview = FALSE, run_dont_run = TRUE)
-check()
+library(devtools);
+document();
+rmarkdown::render("README.Rmd");
+fs::file_delete("README.html");
+pkgdown::build_site(preview = FALSE, run_dont_run = TRUE);
+check();
 ```
 
 ## Building docs

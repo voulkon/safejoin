@@ -7,6 +7,7 @@
 
 [![R build
 status](https://github.com/SamEdwardes/safejoin/workflows/R-CMD-check/badge.svg)](https://github.com/SamEdwardes/safejoin/actions)
+
 <!-- badges: end -->
 
 The goal of safejoin is to guarantee that when performing joins that
@@ -81,3 +82,13 @@ safe_left_join(x, y, by = "key")
 #> 1   a       1       1
 #> 2   b       2       1
 ```
+
+## Other useful packages
+
+There are other packages that help solve similar problems. Most notably
+<https://github.com/krlmlr/dm> provides great features to treat data
+frames like a data base.
+
+## Reference and Attribution
+
+safejoin is created and maintained by Sam Edwardes.
