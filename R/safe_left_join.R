@@ -1,6 +1,6 @@
 #' Safe left join
 #'
-#' @param ... Parameters from dplyr::left_join.
+#' @inheritDotParams dplyr::left_join
 #' @param action What should happen when the number of rows changes from a join?
 #'   Options include: 'error', 'warning', or 'message'. By default 'error'.
 #'
@@ -19,6 +19,7 @@ safe_left_join <- function(..., action="error") {
   } else {
     x <- params$x
   }
+
 
   # Perform the join
   data <- dplyr::left_join(...)
