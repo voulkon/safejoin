@@ -3,6 +3,12 @@
 
 # safejoin
 
+<!-- badges: start -->
+
+[![R build
+status](https://github.com/SamEdwardes/safejoin/workflows/R-CMD-check/badge.svg)](https://github.com/SamEdwardes/safejoin/actions)
+<!-- badges: end -->
+
 The goal of safejoin is to guarantee that when performing joins that
 extra rows are not added to your data. safejoin is a wrapper around the
 [`dplyr::left_join`](https://dplyr.tidyverse.org/reference/join.html)

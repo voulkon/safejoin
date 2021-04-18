@@ -15,6 +15,10 @@ knitr::opts_chunk$set(
 
 # safejoin
 
+<!-- badges: start -->
+[![R build status](https://github.com/SamEdwardes/safejoin/workflows/R-CMD-check/badge.svg)](https://github.com/SamEdwardes/safejoin/actions)
+<!-- badges: end -->
+
 The goal of safejoin is to guarantee that when performing joins that extra rows are not added to your data. safejoin is a wrapper around the [`dplyr::left_join`](https://dplyr.tidyverse.org/reference/join.html) function.
 
 - [Docs](https://safejoin-r.netlify.app/)
@@ -23,7 +27,7 @@ The goal of safejoin is to guarantee that when performing joins that extra rows 
 
 ## Installation
 
-safejoin is currently under development.
+safejoin is currently under development. An update will be published here once the package is published on CRAN.
 
 <!--
 You can install the released version of safejoin from [CRAN](https://CRAN.R-project.org) with:
