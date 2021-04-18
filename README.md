@@ -8,6 +8,10 @@ extra rows are not added to your data. safejoin is a wrapper around the
 [`dplyr::left_join`](https://dplyr.tidyverse.org/reference/join.html)
 function.
 
+-   [Docs](https://safejoin-r.netlify.app/)
+-   [GitHub](https://github.com/SamEdwardes/safejoin/)
+-   CRAN (not yet published)
+
 ## Installation
 
 safejoin is currently under development.
