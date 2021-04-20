@@ -56,8 +56,8 @@ safe_left_join(x, y, by = "key")
 
 ``` r
 safe_left_join(x, y, by = "key", action="warning")
-#> Warning in safe_left_join(x, y, by = "key", action = "warning"): Input data x had 2 rows. After
-#> performing the join the data has 3 rows.
+#> Warning in safe_left_join(x, y, by = "key", action = "warning"): Input data x had 2 rows. After performing the join
+#> the data has 3 rows.
 #>   key value_x value_y
 #> 1   a       1       1
 #> 2   a       1       1

@@ -7,16 +7,14 @@
 Before submitting a PR please run the following:
 
 ```r
-library(devtools)
-
 # Build docs
-document()
+devtools::document()
 rmarkdown::render("README.Rmd")
 fs::file_delete("README.html")
 pkgdown::build_site(preview = FALSE, run_dont_run = TRUE)
 
 # Check
-check()
+devtools::check()
 ```
 
 ## Releasing to CRAN
