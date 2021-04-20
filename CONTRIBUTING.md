@@ -25,7 +25,7 @@ First run the steps outlined above that are required before submitting a PR. The
 
 ```r
 # Checks
-check_spelling()
+spell_check()
 check_rhub()
 check_win_devel()
 

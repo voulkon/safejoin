@@ -25,7 +25,7 @@
 #' y <- data.frame(key = c("a", "b"), value_y = c(1, 1))
 #' safe_left_join(x, y)
 #'
-#' \dontrun{
+#' \donttest{
 #' # The relationship between `x` and `y` is '1:*'. An error should be raised
 #' # because additional rows will be added to the left hand side.
 #' x <- data.frame(key = c("a", "b"), value_x = c(1, 2))
