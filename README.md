@@ -7,6 +7,7 @@
 
 [![R build
 status](https://github.com/SamEdwardes/safejoin/workflows/R-CMD-check/badge.svg)](https://github.com/SamEdwardes/safejoin/actions)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/safejoin)](https://cran.r-project.org/package=safejoin)
 
 <!-- badges: end -->
 
@@ -17,7 +18,7 @@ function.
 
 -   [Docs](https://safejoin-r.netlify.app/)
 -   [GitHub](https://github.com/SamEdwardes/safejoin/)
--   CRAN (not yet published)
+-   [CRAN](https://cran.r-project.org/web/packages/safejoin/index.html)
 
 ## Installation
 
@@ -28,13 +29,10 @@ You can install the released version of safejoin from
 install.packages("safejoin")
 ```
 
-*Note that as of 2021-04-18 safejoin has been submitted to CRAN. It has
-not yet been accepted.*
-
-Install from GitHub
+Install development version from GitHub:
 
 ``` r
-devtools::install_github("SamEdwardes/safejoin")
+devtools::install_github("SamEdwardes/safejoin", ref = "dev")
 ```
 
 ## Example
@@ -56,8 +54,8 @@ safe_left_join(x, y, by = "key")
 
 ``` r
 safe_left_join(x, y, by = "key", action="warning")
-#> Warning in safe_left_join(x, y, by = "key", action = "warning"): Input data x had 2 rows. After
-#> performing the join the data has 3 rows.
+#> Warning in safe_left_join(x, y, by = "key", action = "warning"): Input data x
+#> had 2 rows. After performing the join the data has 3 rows.
 #>   key value_x value_y
 #> 1   a       1       1
 #> 2   a       1       1
