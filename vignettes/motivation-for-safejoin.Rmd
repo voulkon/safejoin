@@ -17,3 +17,46 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(safejoin)
 ```
+
+## Why safejoin?
+
+Often data scientists perform analysis on data that is not tidy.
+
+Have you ever found yourself writing code like this?
+
+```{r error=TRUE}
+library(dplyr)
+library(nycflights13)
+
+# Add some extra rows to the planes data set to mess up the *:1 relationship
+# between flights and planes
+planes_messy <- planes %>% 
+  bind_rows(head(planes))
+
+nrows_before_join <- nrow(flights)
+x <- left_join(flights, planes_messy, by = "tailnum")
+
+if (nrows_before_join != nrow(x)) {
+  stop("Left join added extra rows to the flights table.")
+}
+
+x
+```
+
+With safejoin the checks are automatically built in.
+
+```{r error=TRUE}
+library(safejoin)
+
+safe_left_join(flights, planes_messy, by = "tailnum")
+```
+
+When the join is valid `safejoin::safe_left_join` will act exactly like `dplyr::left_join`.
+
+```{r}
+safe_left_join(flights, planes, by = "tailnum")
+```
+
+## Other useful tools
+
+In progress
