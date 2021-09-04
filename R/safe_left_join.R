@@ -37,28 +37,30 @@
 #' y <- data.frame(key = c("a", "a"), value_y = c(1, 1))
 #' safe_left_join(x, y, action = "warning")
 #' safe_left_join(x, y, action = "message")
-safe_left_join <- function(..., action = "error", relationship = "*:1") {
 
+
+safe_left_join <- function(..., action = "error", relationship = "*:1") {
+  
   # Validate parameters
   action_options <- c("error", "warning", "message")
-
+  
   if (!(action %in% action_options)) {
     stop(glue::glue(
       "`action` must be one of: ",
       "{glue::glue_collapse(action_options, ', ')}"
     ))
   }
-
+  
   relationship_options <- c("*:1")
   relationship_future_options <- c("*:1", "1:*", "1:1", "*:*")
-
+  
   if (!(relationship %in% relationship_options)) {
     stop(glue::glue(
       "`action` must be one of: ",
       "{glue::glue_collapse(relationship_options, ', ')}"
     ))
   }
-
+  
   # Parse parameters
   params <- list(...)
   if (is.null(params$x)) {
@@ -66,16 +68,49 @@ safe_left_join <- function(..., action = "error", relationship = "*:1") {
   } else {
     x <- params$x
   }
+  
+  #Parse by parameter
+  if (is.null(params$y)) {
+    y <- params[[2]]
+  } else {
+    y <- params$y
+  }
 
+  
+  #If not explicitly set
+  if (is.null(params$by)){
+    
+    #Check whether by is given
+    if(length(params)>2){
+    #And assign the third of our parameters to by
+      by <- params[[3]]
+    }else{
+    #else if by parameter will be guessed by the left_join function
+    #we will try to guess it before it reaches left_join
+    #Which will inevitably be all common columns 
+    by <- colnames(x)[colnames(x) %in% colnames(y)]
+      
+  }
+    } else {
+    by <- params$by
+  }
+  
+  y_duplicate_values <- y[duplicated(y[,by]),by]
+  
+  
   # Perform the join
   data <- dplyr::left_join(...)
-
+  
   # Create the message to display
   msg <- glue::glue(
     "Input data x had {nrow(x)} rows. ",
-    "After performing the join the data has {nrow(data)} rows."
+    "\n",
+    "After performing the join the data has {nrow(data)} rows.",
+    "\n",
+    "Duplicate values in your right side table that created extra rows are: ",
+    paste(y_duplicate_values,collapse = ", ")
   )
-
+  
   # Test if the selected relationship has been respected and raise the
   # appropriate error, warning, or message
   if (nrow(x) != nrow(data)) {
@@ -87,9 +122,10 @@ safe_left_join <- function(..., action = "error", relationship = "*:1") {
       stop(msg)
     }
   }
-
-    {
-    }
-
+  
+  {
+  }
+  
   data
 }
+
